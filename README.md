@@ -1,4 +1,4 @@
-# Lecture 16 - RESTful API (Part 1)
+# Lecture 07 - RESTful API (Part 1)
 
 ### Get an API Testing tool
 
