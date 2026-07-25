@@ -7,6 +7,7 @@ import errorHandler from "./middlewares/invalidJsonMiddleware.ts";
 
 // import routers
 import studentsRouterV1 from "./routes/studentsRoutes_v1.ts";
+import studentsRouterV2 from "./routes/studentsRoutes_v2.ts";
 
 const app = express();
 const port = 3000;
@@ -23,6 +24,7 @@ app.get("/", (req: Request, res: Response) => {
 
 // use routers
 app.use("/api/v1", studentsRouterV1);
+app.use("/api/v2", studentsRouterV2);
 
 app.use(notFoundMiddleware);
 
