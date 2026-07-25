@@ -1,20 +1,25 @@
 import { z } from "zod";
 
-const zStudentId = z
+export const zStudentId = z
   .string()
   .length(9, { message: "Student Id must contain 9 characters" });
+
 const zFirstName = z
   .string()
   .min(3, { message: "First name requires at least 3 charaters" });
+
 const zLastName = z
   .string()
   .min(3, { message: "Last name requires at least 3 characters" });
+
 const zProgram = z.enum(["CPE", "ISNE"], {
   message: "Program must be either CPE or ISNE",
 });
+
 const zprogramId = z.number().refine((val) => val === 101 || val === 102, {
   message: "Program Id must be either 101 or 102",
 });
+
 const zCourse = z.array(z.number());
 
 export const zStudentPostBody = z.object({
